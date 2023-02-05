@@ -18,5 +18,5 @@ python inference_pgnet.py pgnet.onnx img_path
 
 | Original  | Result |
 | ------------- | ------------- |
-| https://github.com/kuroko1t/onnx-ocr/blob/media/media/tullys.jpg?raw=true  | https://github.com/kuroko1t/onnx-ocr/blob/media/media/tullys_pgnet.jpg?raw=true |
+| ![image0](https://github.com/kuroko1t/onnx-ocr/blob/media/media/tullys.jpg?raw=true)  | ![image1](https://github.com/kuroko1t/onnx-ocr/blob/media/media/tullys_pgnet.jpg?raw=true) |
 
