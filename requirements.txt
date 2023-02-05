@@ -1,2 +1,2 @@
-onnxruntime
+onnxruntime-gpu
 paddleocr
