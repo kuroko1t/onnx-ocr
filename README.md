@@ -6,6 +6,7 @@ This is PGNET's onnxruntime inference implementation of [PaddleOCR](https://gith
 
 ```bash
 pip install -r requirements.txt
+wget https://github.com/kuroko1t/onnx-ocr/releases/download/0.1/pgnet.onnx
 ```
 
 ## Run
