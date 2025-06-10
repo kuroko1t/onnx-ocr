@@ -8,21 +8,22 @@ from paddleocr.ppocr.data.imaug.operators import (E2EResizeForTest, KeepKeys,
                                                   NormalizeImage, ToCHWImage)
 from paddleocr.ppocr.postprocess.pg_postprocess import PGPostProcess
 
-from pgnet.chr_dct import chr_dct_list
+# from pgnet.chr_dct import chr_dct_list
 
 
 class PGNetPredictor:
     def __init__(self, img_path, cpu):
         self.img_path = img_path
         self.dict_path = "ic15_dict.txt"
-        if not os.path.exists(self.dict_path):
-            with open(self.dict_path, "w") as f:
-                f.writelines(chr_dct_list)
+        # if not os.path.exists(self.dict_path):
+        #    with open(self.dict_path, "w") as f:
+        #        f.writelines(chr_dct_list)
         if not cpu:
             providers = ["CUDAExecutionProvider"]
         else:
             providers = ["CPUExecutionProvider"]
-        self.sess = onnxruntime.InferenceSession(args.model_path, providers=providers)
+        self.sess = onnxruntime.InferenceSession(
+            args.model_path, providers=providers)
 
     def preprocess(self, img_path):
         img = cv2.imread(img_path)
@@ -94,7 +95,8 @@ class PGNetPredictor:
         width, height, _ = src_im.shape
         for box, str in zip(dt_boxes, strs):
             box = box.astype(np.int32).reshape((-1, 1, 2))
-            cv2.polylines(src_im, [box], True, color=(255, 255, 0), thickness=2)
+            cv2.polylines(src_im, [box], True, color=(
+                255, 255, 0), thickness=2)
             cv2.putText(
                 src_im,
                 str,

@@ -1,2 +1,4 @@
-onnxruntime-gpu
-paddleocr
+onnxruntime-gpu==1.22.0
+paddleocr==2.7.0
+paddlepaddle=2.6.0
+numpy==1.26.4
